@@ -154,3 +154,35 @@ CREATE DATABASE chitter_test;
 By typing \l, these two databases are visible.
 
 ```
+
+```
+I added a table called messages to the chitter database by doing the following:
+
+Starting postgres:
+
+psql postgres
+
+Connecting to the chitter database:
+
+\c messages
+
+Creating a table using the following SQL query, which can be found in the migrations subdirectory of the db directory:
+
+CREATE TABLE messages(id SERIAL PRIMARY KEY, name VARCHAR(40), message VARCHAR(400),  message_handle VARCHAR(20));
+
+I added a test table called messages_test to the chitter_test database by doing the following:
+
+Starting postgres:
+
+psql postgres
+
+Connecting to the chitter_test database:
+
+\c chitter_test
+
+Creating a table using the following SQL query, which is located in the migrations subdirectory of the db directory:
+
+CREATE TABLE messages_test(id SERIAL PRIMARY KEY, name VARCHAR(40), message VARCHAR(400),  message_handle VARCHAR(20));
+
+I used TablePlus to connect to the databases to checkf that their respective tables have the correct columns.
+
