@@ -1,1 +1,1 @@
-CREATE TABLE messages_test(id SERIAL PRIMARY KEY, name VARCHAR(40), message VARCHAR(400),  message_handle VARCHAR(20));
+CREATE TABLE messages_test(id SERIAL PRIMARY KEY, name VARCHAR(40), peep_handle VARCHAR(20), message VARCHAR(400));
