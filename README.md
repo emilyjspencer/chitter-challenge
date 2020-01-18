@@ -131,3 +131,26 @@ SimpleCov.start
 ```
 
 You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+
+
+
+```
+
+Database creation.
+
+Since I don't wish to manipulate data in database when running tests, 
+I created a database and a test database.
+
+I created the formed, called 'chitter', by doing the following:
+
+psql postgres
+
+CREATE DATABASE chitter;
+
+I then created a test database called 'chitter_test', by doing the following:
+
+CREATE DATABASE chitter_test;
+
+By typing \l, these two databases are visible.
+
+```
