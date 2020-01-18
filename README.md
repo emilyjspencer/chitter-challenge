@@ -168,7 +168,7 @@ Connecting to the chitter database:
 
 Creating a table using the following SQL query, which can be found in the migrations subdirectory of the db directory:
 
-CREATE TABLE messages(id SERIAL PRIMARY KEY, name VARCHAR(40), message VARCHAR(400),  message_handle VARCHAR(20));
+CREATE TABLE messages(id SERIAL PRIMARY KEY, name VARCHAR(40), peep_handle VARCHAR(20), message VARCHAR(400));
 
 I added a test table called messages_test to the chitter_test database by doing the following:
 
@@ -182,7 +182,7 @@ Connecting to the chitter_test database:
 
 Creating a table using the following SQL query, which is located in the migrations subdirectory of the db directory:
 
-CREATE TABLE messages_test(id SERIAL PRIMARY KEY, name VARCHAR(40), message VARCHAR(400),  message_handle VARCHAR(20));
+CREATE TABLE messages_test(id SERIAL PRIMARY KEY, name VARCHAR(40), peep_handle VARCHAR(20), message VARCHAR(400));
 
 I used TablePlus to connect to the databases to verify that their respective tables have the correct columns.
 
