@@ -184,5 +184,5 @@ Creating a table using the following SQL query, which is located in the migratio
 
 CREATE TABLE messages_test(id SERIAL PRIMARY KEY, name VARCHAR(40), message VARCHAR(400),  message_handle VARCHAR(20));
 
-I used TablePlus to connect to the databases to checkf that their respective tables have the correct columns.
+I used TablePlus to connect to the databases to verify that their respective tables have the correct columns.
 
