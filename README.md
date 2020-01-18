@@ -141,17 +141,17 @@ Database creation.
 Since I don't wish to manipulate data in database when running tests, 
 I created a database and a test database.
 
-I created the formed, called 'chitter', by doing the following:
+I created the former, called 'chitter', by typing the following:
 
 psql postgres
 
 CREATE DATABASE chitter;
 
-I then created a test database called 'chitter_test', by doing the following:
+I then created a test database called 'chitter_test', by typing the following:
 
 CREATE DATABASE chitter_test;
 
-By typing \l, these two databases are visible.
+Typing \l allows us to verify that these two databases exist.
 
 ```
 
@@ -185,4 +185,6 @@ Creating a table using the following SQL query, which is located in the migratio
 CREATE TABLE messages_test(id SERIAL PRIMARY KEY, name VARCHAR(40), message VARCHAR(400),  message_handle VARCHAR(20));
 
 I used TablePlus to connect to the databases to verify that their respective tables have the correct columns.
+
+We can also us the \dt command to check that specific tables exist inside of databases.
 
