@@ -7,6 +7,6 @@ def wipe_test_database
   connection = PG.connect(dbname: 'chitter_test') # connect to the test database 
 
 
-  connection.exec("TRUNCATE messages_test;") # Clear the messages table
+  connection.exec("TRUNCATE messages;") # Clear the messages table
 
 end 

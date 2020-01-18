@@ -14,8 +14,8 @@ require 'database_connection'
    describe '.query' do
      it 'executes a query via PG' do
        connection = DatabaseConnection.establish_connection('chitter_test')
-       expect(connection).to receive(:exec).with("SELECT * FROM messages_test;")
-       DatabaseConnection.query("SELECT * FROM messages_test;")
+       expect(connection).to receive(:exec).with("SELECT * FROM messages;")
+       DatabaseConnection.query("SELECT * FROM messages;")
      end
    end
  end
