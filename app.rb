@@ -2,6 +2,9 @@ require 'sinatra/base'
 
 class Chitter < Sinatra::Base 
 
+  get '/' do
+    "Chitter - for all your Chatter"
+  end
 
 
 
