@@ -7,11 +7,12 @@ class Chitter < Sinatra::Base
   end
 
   get '/index' do
-   [
+   @peeps = [
     'We are learning how to build a full-stack application',
     'From Monday we will no longer be the newest cohort', 
     'Tweets sounds better than Peeps'
    ]
+   erb(:index)
   end 
 
 
