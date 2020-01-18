@@ -7,13 +7,9 @@ class Chitter < Sinatra::Base
   end
 
   get '/index' do
-   @messages = [
-    'We are learning how to build a full-stack application',
-    'From Monday we will no longer be the newest cohort', 
-    'Tweets sounds better than Peeps'
-   ]
-   erb(:index)
-  end 
+    @messages = Messages.all
+    erb (:index)
+   end
 
 
   run if app_file == $0
