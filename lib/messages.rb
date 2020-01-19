@@ -19,7 +19,7 @@ class Messages# updates messages - we need to deal with specific instances - i.e
     end.reverse
   end 
 
-  def self.create_message(name:, message:, peep_handle:) 
+  def self.create_message(name:, message:, peep_handle:, timestamp:) 
     result = DatabaseConnection.query("INSERT INTO messages (name, message, peep_handle) VALUES(' #{name}', '#{message}', '#{peep_handle}') RETURNING id, name, message, peep_handle, posted_at;")
     Messages.new(id: result[0]['id'], name: result[0]['name'], message: result[0]['message'], peep_handle: result[0]['peep_handle'], timestamp: result[0]['posted_at'])
   end 

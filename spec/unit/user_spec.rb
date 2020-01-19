@@ -30,4 +30,18 @@ require 'database_helpers'
       expect(Users.find_details(id: nil)).to eq nil
      end
    end
+
+
+   describe '.authenticate' do
+    it 'returns a user when given the correct credentials - email and password' do
+      user = Users.create(email: 'emily@gmail.com', password: 'coding', peep_handle: 'lajoiedevivre89')
+      authenticated = Users.authenticate(email: 'emily@gmail,com', password: 'coding')
+      expect(authenticated.id).to eq user.id # expect the authenticated user's id to match that same user's id -to ensure its the same person 
+    end
+
+    it 'returns nil when wrong email input' do
+      user = Users.create(email: 'emily@gmail.com', password: 'coding', peep_handle: 'lajoiedevivre89')
+      expect(Users.authenticate(email: 'emilu@gmail.com', password: 'coding')).to be_nil
+    end
+  end
  end

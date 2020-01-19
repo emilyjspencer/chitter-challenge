@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<body>
+<form action="/sessions" method="post">
+   <input type="email" name="email" placeholder="Enter email">
+   <input type="password" name="password" placeholder="Enter password">
+   <input class="button" type="submit" name="Sign in">
+ </form> 
+
+ <h1>
+   <%= flash[:notice] %>
+ </h1>
+ </body>
+ <style>
+
+  body {
+   background-color: #ffccff;
+   text-align: center;
+ }
+
+  .button {
+  background-color: #ff1aff;
+  border: none;
+  color: white;
+  padding: 5px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 10px;
+}
+ </style>
+ </html>

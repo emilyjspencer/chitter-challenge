@@ -22,8 +22,18 @@ class Users
   end
 
   def self.find_details(id:)
-    return nil unless id
+    return nil unless id 
     result = DatabaseConnection.query("SELECT * FROM users WHERE id = #{id};")
+    Users.new(
+      id: result[0]['id'],
+      email: result[0]['email'],
+      peep_handle: result[0]['peep_handle']
+    )
+  end
+
+  def self.authenticate(email:, password:)
+    result = DatabaseConnection.query("SELECT * FROM users WHERE email = '#{email}';")
+    return unless result.any? 
     Users.new(
       id: result[0]['id'],
       email: result[0]['email'],

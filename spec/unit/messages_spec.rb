@@ -27,5 +27,5 @@ describe Messages do
      expect(message.id).to eq persisted_data.first['id'] # id()  is an attribute reader
      expect(message.message).to eq 'Hello' # message() is an attribute reader
    end
-  end
+  end       
 end

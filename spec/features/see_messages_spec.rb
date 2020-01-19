@@ -6,11 +6,6 @@
     Messages.create_message(name: 'Emily', message: 'We are learning how to build a full-stack application', peep_handle: 'lajoiedevivre89', timestamp: '05:30:07')
     Messages.create_message(name: 'Billy', message: 'From Monday we will no longer be the newest cohort', peep_handle: 'housemusic1', timestamp: '05:30:07')
     Messages.create_message(name: 'Jonas', message: 'Tweets sound better than peeps', peep_handle: 'popmusicrocks', timestamp: '05:30:07')
-    #message = Messages.create_message(name: 'Emily', message: 'We are learning how to build a full-stack application', peep_handle: 'lajoiedevivre89', timestamp: '05:30:07')
-      
-    #connection.exec("INSERT INTO messages(message) VALUES ('We are learning how to build a full-stack application');") 
-    #connection.exec("INSERT INTO messages(message) VALUES ('From Monday we will no longer be the newest cohort');") 
-    #connection.exec("INSERT INTO messages(message) VALUES ('Tweets sound better than peeps');") 
     visit '/index'
     expect(page).to have_content 'We are learning how to build a full-stack application' 
     expect(page).to have_content 'From Monday we will no longer be the newest cohort' 

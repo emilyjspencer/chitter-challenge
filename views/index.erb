@@ -2,17 +2,34 @@
  <html>
  <body>
  <div class="header">
+<form action="/sessions/new">
+  <input class="button" type="submit" value="Sign in"> 
+ </form>
  <p>Chitter - for all your Chatter</p>
  </div>
+ <h2>What's happening?</h2>
 
  
  <form action="/messages" method="post">
+ <label for="email">
+ 	Email:
   <input type="text" name="name" placeholder="What is your name?">
+  </label>
+  <label for="message">
+  Peep:
   <input type="text" name="message" placeholder="Create message">
+  </label>
+  <label for="peep_handle">
+  Handle:
   <input type="text" name="peep_handle" placeholder="peep_handle">
-  <input type="submit" value="Post" >
-</form>
+  </label>
+  <input class="button" type="submit" value="Post" >
+</form> 
+<br>
+<br>
+<br>
  
+ <h2>Here's what's going on in your circle</h2>
   <ol>
    <% @messages.each do |message| %>
      <li>
@@ -24,8 +41,10 @@
    <% end %>
  </ol>
 
+
+
  <form action="/users/new" method="post">
- <input type="submit" value="Click here to sign up for a Chitter account">
+ <input class="button" type="submit" value="Click here to sign up for a Chitter account">
  </form>
 </body>
 
@@ -45,7 +64,7 @@ h3 {
 
 .header {
   font-size: 30px;
-  color: #b3b3cc;
+  color: #ff1aff;
   text-align: center;
   border: solid, black, 5px;
 }
@@ -62,6 +81,17 @@ h3 {
 ol {
   text-align: center; 
   display: inline-block;
+}
+
+.button {
+  background-color: #ff1aff;
+  border: none;
+  color: white;
+  padding: 5px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 10px;
 }
 
 
