@@ -16,9 +16,7 @@ class Chitter < Sinatra::Base
    end
 
   post '/messages' do
-     p params
-     message = params['message'] # message is what we type in the form - we get back
-     DatabaseConnection.query("INSERT INTO messages (message) VALUES('#{message}');") #we put what was entered in form into the database
+     Messages.create_message(name: params[:name], message: params[:message], peep_handle: params[:peep_handle])
      redirect '/messages'
   end
 
@@ -27,9 +25,11 @@ class Chitter < Sinatra::Base
   end
 
   get '/messages' do
-    #message = params['message']
+    message = params['message']
     @messages = Messages.all
+    erb(:messages)
   end
+
 
 
 
