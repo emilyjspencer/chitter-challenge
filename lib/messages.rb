@@ -16,7 +16,7 @@ class Messages# updates messages - we need to deal with specific instances - i.e
     
     result.map do |message|
       Messages.new(id: message['id'], name: message['name'], message: message['message'], peep_handle: message['peep_handle'])
-    end 
+    end.reverse
   end 
 
   def self.create_message(name:, message:, peep_handle:) 
