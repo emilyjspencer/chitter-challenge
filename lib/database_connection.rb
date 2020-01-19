@@ -1,14 +1,14 @@
 class DatabaseConnection
 
-    def self.establish_connection(dbname) # connect to the database
+    def self.establish_connection(dbname) 
       @connection = PG.connect(dbname: dbname)
     end
 
 
-    def self.query(sql) # query the database 
+    def self.query(sql) 
       @connection.exec(sql)
     end
-    # using a class instance variable to store the connection - the DatabaseConnection is never going to be instantiated.
+  
      
 
 

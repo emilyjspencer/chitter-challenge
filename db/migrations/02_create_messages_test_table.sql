@@ -1,1 +1,0 @@
-CREATE TABLE messages_test(id SERIAL PRIMARY KEY, name VARCHAR(40), peep_handle VARCHAR(20), message VARCHAR(400));

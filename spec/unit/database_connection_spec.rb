@@ -1,8 +1,6 @@
 require 'database_connection'
 
  describe DatabaseConnection do
-  # testing the two class methods - .setup and .query 
-  # when a query is made, an instance of the PG::Result class is created. 
 
    describe '.establish_connection' do
      it 'establishes a connection to the database through PG' do
