@@ -1,11 +1,79 @@
+ <!DOCTYPE html>
+ <html>
+ <body>
+ <div class="header">
+ <p>Chitter - for all your Chatter</p>
+ </div>
 
+ 
+ <form action="/messages" method="post">
+  <input type="text" name="name" placeholder="What is your name?">
+  <input type="text" name="message" placeholder="Create message">
+  <input type="text" name="peep_handle" placeholder="peep_handle">
+  <input type="submit" value="Post" >
+</form>
+ 
   <ol>
    <% @messages.each do |message| %>
-     
      <li>
        <h3><%= message.name %></h3>
-           <%= message.message %>
+          <p id="peep"> <%= message.message %></p>
          <p><%= message.peep_handle %></p>
+         <br id="time">Posted at: <%= message.timestamp %></br>
      </li>
    <% end %>
  </ol>
+
+ <form action="/users/new" method="post">
+ <input type="submit" value="Click here to sign up for a Chitter account">
+ </form>
+</body>
+
+<style>
+
+
+ body {
+   background-color: #ffccff;
+   text-align: center;
+ }
+
+h3 {
+  color:  #a3c2c2
+  text-align: center;
+}
+
+
+.header {
+  font-size: 30px;
+  color: #b3b3cc;
+  text-align: center;
+  border: solid, black, 5px;
+}
+
+#peep {
+  text-align: center;
+   color:  #99ffff;
+}
+
+#time {
+  text-align: center;
+}
+
+ol {
+  text-align: center; 
+  display: inline-block;
+}
+
+
+
+ #sloth {
+       border: 10px #ff80ff solid;
+       width: 500px;
+      height: 400px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+     }
+ </style>
+ </html>
+
