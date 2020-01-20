@@ -13,7 +13,7 @@ describe Messages do
       expect(messages.length).to eq 3
       expect(message).to be_a Messages
       expect(message.message).to eq 'We are learning how to build a full-stack application'
-      expect(message.name).to eq 'Emily'
+      expect(message.name).to eq ' Emily'
       expect(message.peep_handle).to eq 'lajoiedevivre89' 
       expect(message.timestamp).to eq '05:30:07'
     end

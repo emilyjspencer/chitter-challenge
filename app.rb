@@ -7,11 +7,11 @@ require 'sinatra/flash'
 
 class Chitter < Sinatra::Base 
 
-  enable :sessions # to store user input in the session(remember it)
-  register Sinatra::Flash # will enable pop up messages
+  enable :sessions 
+  register Sinatra::Flash 
 
   post '/sessions' do
-    user = Users.authenticate(email: params[:email], password: params[:password]) # what the user input as email and password is stored in the session
+    user = Users.authenticate(email: params[:email], password: params[:password]) 
     if user
       session[:user_id] = user.id
       redirect '/messages'
