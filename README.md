@@ -1,4 +1,108 @@
 Chitter Challenge
+
+
+```
+
+### Database creation
+
+The Chitter Challenge uses **PostgreSQL**, so if you don't have it installed on your computer, please do the following:
+
+Install postgres:
+
+**brew install postgresql**
+
+Start postgres:
+
+**brew services start postgresql**
+
+**psql postgres**
+
+Create database:
+
+
+**CREATE DATABASE chitter;**
+
+
+Create a test database:
+
+**CREATE DATABASE chitter_test;**
+
+
+###Connect to the chitter database by typing:
+
+**\c** 
+
+Create the following tables, by typing the following SQL commands:
+
+```html
+CREATE TABLE messages(id SERIAL PRIMARY KEY, name VARCHAR(40), peep_handle VARCHAR(20), message VARCHAR(400));
+```
+
+```html
+ALTER TABLE messages ADD COLUMN posted_at TIMESTAMP DEFAULT NOW(); 
+```
+
+```html
+CREATE TABLE users(id SERIAL PRIMARY KEY, email VARCHAR(40), password VARCHAR(100), peep_handle VARCHAR(40));
+```
+
+Check that the tables have been created by typing the following: 
+
+```html
+**\dt**
+```
+
+
+How to use:
+
+Clone this repository:
+
+**git clone https://github.com/emilyjspencer/chitter-challenge.git**
+
+cd into the repo on your computer
+
+Rundle **bundle install**
+
+Start the server:
+
+**rackup**
+
+**Go to localhost:9292**
+
+### How to run the tests
+
+* Type the following into the terminal: 
+```html
+rspec
+```
+
+## Built with
+
+* Ruby
+* Sinatra
+* HTML/CSS
+* SQL 
+
+## Tested with
+
+* RSpec
+* Capybara 
+
+### What it looks like:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 =================
 
 * Challenge time: rest of the day and weekend, until Monday 9am
@@ -132,56 +236,5 @@ SimpleCov.start
 
 You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
 
-
-
-```
-
-Database creation.
-
-Since I don't wish to manipulate data in database when running tests, 
-I created a database and a test database.
-
-I created the former, called 'chitter', by typing the following:
-
-psql postgres
-
-CREATE DATABASE chitter;
-
-I then created a test database called 'chitter_test', by typing the following:
-
-CREATE DATABASE chitter_test;
-
-Typing \l allows us to verify that these two databases exist.
-
-```
-
-```
-I added a table called messages to the chitter database by doing the following:
-
-Starting postgres:
-
-psql postgres
-
-Connecting to the chitter database:
-
-\c messages
-
-Creating a table using the following SQL query, which can be found in the migrations subdirectory of the db directory:
-
-CREATE TABLE messages(id SERIAL PRIMARY KEY, name VARCHAR(40), peep_handle VARCHAR(20), message VARCHAR(400));
-
-I added a test table called messages to the chitter_test database by doing the following:
-
-Starting postgres:
-
-psql postgres
-
-Connecting to the chitter_test database:
-
-\c chitter_test
-
-Creating a table using the following SQL query, which is located in the migrations subdirectory of the db directory:
-
-CREATE TABLE messages(id SERIAL PRIMARY KEY, name VARCHAR(40), peep_handle VARCHAR(20), message VARCHAR(400));
 
 

@@ -1,14 +1,25 @@
  <!DOCTYPE html>
  <html>
+ <head>
+   <title>Index</title>
+   <link rel="stylesheet" type="text/css" href="css/index.css">
+  </head>
  <body>
  <div class="header">
-<form action="/sessions/new">
-  <input class="button" type="submit" value="Sign in"> 
- </form>
+ <nav>
+    <a class="nav-link" href="#About" rel="internal"><i class="fa fa-home"></i>About</a>
+    <a class="nav-link" href="#Sign up" rel="internal"><i class="fa fa-user-plus"></i>Sign Up</a>
+    <a class="nav-link" href="#Log in" rel="internal"><i class="fa fa-sign-in"></i>Log In</a>
+    <a href="#"><i class="fa fa-phone"></i>Contact Us</a>
+  </nav>
  <p>Chitter - for all your Chatter</p>
  </div>
  <h2>What's happening?</h2>
-
+ <img id="chitterlogo" src="Images/Chitter.png">
+<br>
+<br>
+<br>
+<br>
  
  <form action="/messages" method="post">
  <label for="email">
@@ -41,23 +52,36 @@
    <% end %>
  </ol>
 
-
-
+<section id="About">
+<p>Chitter is a British microblogging and social networking service on which users post and interact with messages known as "peeps".</p>
+<p> Registered users can post tweets, but unregistered users can only read them. Users access Chitter through its website interface, through Short Message Service (SMS) or its mobile-device application software ("app").</p>
+<p>Chitter, Inc. is based in Shoreditch, London and has more than 10 offices around the world. Peeps were originally restricted to 140 characters, but there is currently no limit</p>
+<p>Chitter was created in January 2020 by Millie Jacobson, Donna Graham and Imelda Danson. The service rapidly gained worldwide popularity. </p>
+<section id="Sign up">
  <form action="/users/new" method="post">
  <input class="button" type="submit" value="Click here to sign up for a Chitter account">
  </form>
-</body>
+ </section>
+ <br>
+ <br>
+<section id="Log in">
+ <form action="/sessions/new">
+  <input class="button" type="submit" value="Log in"> 
+ </form>
+ </section>
 
-<style>
+ <style>
+ @import url('https://fonts.googleapis.com/css?family=Roboto:200');
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
 
 
- body {
+body {
    background-color: #ffccff;
    text-align: center;
  }
 
 h3 {
-  color:  #a3c2c2
+  color:  #a3c2c2;
   text-align: center;
 }
 
@@ -71,7 +95,7 @@ h3 {
 
 #peep {
   text-align: center;
-   color:  #99ffff;
+  color:  #99ffff;
 }
 
 #time {
@@ -95,15 +119,69 @@ ol {
 }
 
 
+ img {
+    width: 150px;
+    height: 150px;
 
- #sloth {
-       border: 10px #ff80ff solid;
-       width: 500px;
-      height: 400px;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-     }
- </style>
+ }
+
+ 
+
+
+
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+a {
+  font-size: 35px;
+  margin: 20px;
+  text-decoration: none;
+  color: #95a5a6;
+  font-family: roboto;
+  border-bottom: 1px solid #52c9aa;
+  transition: color 0.75s ease-in-out;
+}
+
+a:hover {
+  color: #e974bc;
+  border-bottom-color: #4d0730;
+}
+
+i {
+  margin-right: 10px;
+}
+
+
+
+@media screen and (max-width: 600px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+    background: #cc8db4;
+  }
+  a {
+    color: white;
+  }
+}
+
+
+@media screen and (max-width: 920px) {
+    nav {
+      justify-content: center;
+    }
+    a {
+      font-size: 26px;
+    }
+  }
+
+ 
+
+  </style>
+</body>
+
+
  </html>
 
