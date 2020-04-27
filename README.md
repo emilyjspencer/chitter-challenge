@@ -7,28 +7,37 @@ The Chitter Challenge uses **PostgreSQL**, so if you don't have it installed on 
 
 Install postgres:
 
-**brew install postgresql**
+```html
+brew install postgresql
+```
 
 Start postgres:
 
-**brew services start postgresql**
+```
+brew services start postgresql
+```
 
 **psql postgres**
 
 Create database:
 
-
-**CREATE DATABASE chitter;**
+```html
+CREATE DATABASE chitter;
+```
 
 
 Create a test database:
 
-**CREATE DATABASE chitter_test;**
+```html
+CREATE DATABASE chitter_test;
+```
 
 
 ###Connect to the chitter database by typing:
 
-**\c** 
+```html
+\c chitter
+```
 
 Create the following tables, by typing the following SQL commands:
 
@@ -47,8 +56,10 @@ CREATE TABLE users(id SERIAL PRIMARY KEY, email VARCHAR(40), password VARCHAR(10
 Check that the tables have been created by typing the following: 
 
 ```html
-**\dt**
+\dt
 ```
+
+Repeat for the test database - chitter_test
 
 
 How to use:
@@ -88,7 +99,7 @@ rspec
 
 ### What it looks like:
 
-
+![homepage](index.png)
 
 
 
