@@ -10,7 +10,7 @@
     <a class="nav-link" href="#About" rel="internal"><i class="fa fa-home"></i>About</a>
     <a class="nav-link" href="#Sign up" rel="internal"><i class="fa fa-user-plus"></i>Sign Up</a>
     <a class="nav-link" href="#Log in" rel="internal"><i class="fa fa-sign-in"></i>Log In</a>
-    <a href="#"><i class="fa fa-phone"></i>Contact Us</a>
+    <a class="nav-link" href="#Contact us" rel="internal"><i class="fa fa-phone"></i>Contact Us</a>
   </nav>
  <p>Chitter - for all your Chatter</p>
  </div>
@@ -41,6 +41,9 @@
 <br>
  
  <h2>Here's what's going on in your circle</h2>
+ <br>
+ <br>
+ <br>
   <ol>
    <% @messages.each do |message| %>
      <li>
@@ -53,21 +56,32 @@
  </ol>
 
 <section id="About">
-<p>Chitter is a British microblogging and social networking service on which users post and interact with messages known as "peeps".</p>
-<p> Registered users can post tweets, but unregistered users can only read them. Users access Chitter through its website interface, through Short Message Service (SMS) or its mobile-device application software ("app").</p>
-<p>Chitter, Inc. is based in Shoreditch, London and has more than 10 offices around the world. Peeps were originally restricted to 140 characters, but there is currently no limit</p>
-<p>Chitter was created in January 2020 by Millie Jacobson, Donna Graham and Imelda Danson. The service rapidly gained worldwide popularity. </p>
+<h2>About Chitter</h2>
+<p><strong>Chitter</strong> is a British microblogging and social networking service on which users post</p>
+<p>and interact with messages known as <strong>"peeps"</strong>.</p>
+<p>Registered users can post peeps, but unregistered users can only read them.</p>
+<p>Users access Chitter through its <strong>website interface</strong>, through Short Message Service (SMS) or </p>
+<p>its mobile-device application software ("app").</p>
+<p><strong>Chitter, Inc.</strong> is based in <Strong>Shoreditch</strong>, London and has more than 10 offices around the world.</p>
+<p>Peeps were originally restricted to 140 characters, but there is currently no limit</p>
+<p>Chitter was created in <strong>January 2020</strong> by <strong>Millie Jacobson, Donna Graham and Imelda Danson.</strong> </p>
+<p>The service rapidly gained worldwide popularity. </p>
 <section id="Sign up">
- <form action="/users/new" method="post">
+ <form id="formsignup" action="/users/new" method="post">
  <input class="button" type="submit" value="Click here to sign up for a Chitter account">
  </form>
  </section>
  <br>
  <br>
 <section id="Log in">
- <form action="/sessions/new">
+ <form id="formsignin" action="/sessions/new">
   <input class="button" type="submit" value="Log in"> 
  </form>
+ </section>
+
+ <section id="Contact us">
+ <p>Phone number: 0208 9876 2354711</p>
+ <p>Email: customerservices.chitter@gmail.com</p>
  </section>
 
  <style>
@@ -76,7 +90,7 @@
 
 
 body {
-   background-color: #ffccff;
+   background-color: white;
    text-align: center;
  }
 
@@ -175,6 +189,20 @@ i {
     a {
       font-size: 26px;
     }
+  }
+
+  p {
+    text-align: center;
+  }
+
+  #formsignup {
+    width: 100px;
+    height: 100px;
+
+  }
+
+  #formsignin {
+
   }
 
  

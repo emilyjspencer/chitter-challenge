@@ -1,8 +1,6 @@
 Chitter Challenge
 
 
-```
-
 ### Database creation
 
 The Chitter Challenge uses **PostgreSQL**, so if you don't have it installed on your computer, please do the following:
