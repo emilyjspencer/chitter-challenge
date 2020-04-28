@@ -12,7 +12,7 @@
     <a class="nav-link" href="#Log in" rel="internal"><i class="fa fa-sign-in"></i>Log In</a>
     <a class="nav-link" href="#Contact us" rel="internal"><i class="fa fa-phone"></i>Contact Us</a>
   </nav>
- <p>Chitter - for all your Chatter</p>
+ <h1>Chitter - for all your Chatter</h1>
  </div>
  <h2>What's happening?</h2>
  <img id="chitterlogo" src="Images/Chitter.png">
@@ -28,11 +28,11 @@
   </label>
   <label for="message">
   Peep:
-  <input type="text" name="message" placeholder="Create message">
+  <input type="text" name="message" placeholder="What's on your mind?">
   </label>
   <label for="peep_handle">
   Handle:
-  <input type="text" name="peep_handle" placeholder="peep_handle">
+  <input type="text" name="peep_handle" placeholder="Enter a peep_handle">
   </label>
   <input class="button" type="submit" value="Post" >
 </form> 
@@ -58,14 +58,17 @@
 <section id="About">
 <h2>About Chitter</h2>
 <p><strong>Chitter</strong> is a British microblogging and social networking service on which users post</p>
-<p>and interact with messages known as <strong>"peeps"</strong>.</p>
-<p>Registered users can post peeps, but unregistered users can only read them.</p>
+<p>and interact with messages.</p>
+<p>Registered users can post messages, but unregistered users can only read them.</p>
 <p>Users access Chitter through its <strong>website interface</strong>, through Short Message Service (SMS) or </p>
 <p>its mobile-device application software ("app").</p>
 <p><strong>Chitter, Inc.</strong> is based in <Strong>Shoreditch</strong>, London and has more than 10 offices around the world.</p>
 <p>Peeps were originally restricted to 140 characters, but there is currently no limit</p>
 <p>Chitter was created in <strong>January 2020</strong> by <strong>Millie Jacobson, Donna Graham and Imelda Danson.</strong> </p>
 <p>The service rapidly gained worldwide popularity. </p>
+<br>
+<br>
+<div class="container">
 <section id="Sign up">
  <form id="formsignup" action="/users/new" method="post">
  <input class="button" type="submit" value="Click here to sign up for a Chitter account">
@@ -78,6 +81,7 @@
   <input class="button" type="submit" value="Log in"> 
  </form>
  </section>
+ </div>
 
  <section id="Contact us">
  <p>Phone number: 0208 9876 2354711</p>
@@ -94,15 +98,20 @@ body {
    text-align: center;
  }
 
-h3 {
-  color:  #a3c2c2;
+h2 {
+  color:  #00ace6;
+  text-align: center;
+}
+
+h1 {
+  color:  #4dd2ff;
   text-align: center;
 }
 
 
 .header {
   font-size: 30px;
-  color: #ff1aff;
+  color: #80dfff;
   text-align: center;
   border: solid, black, 5px;
 }
@@ -122,7 +131,8 @@ ol {
 }
 
 .button {
-  background-color: #ff1aff;
+  background-color: #33ccff
+  ;
   border: none;
   color: white;
   padding: 5px 15px;
@@ -130,6 +140,31 @@ ol {
   text-decoration: none;
   display: inline-block;
   font-size: 10px;
+}
+
+.container {
+  padding: 100px;
+  max-width: 1000px;
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  height: 60px;
+  justify-content: space-around;
+  flex-wrap: nowrap;
+  align-items: stretch;
+}
+
+#formsignup {
+  flex: none;
+  width: 300px;
+  font-size: 30px;
+}
+
+#formsignin {
+  flex: none;
+  width: 100px;
+  font-size: 30px;
+
 }
 
 
@@ -150,7 +185,7 @@ nav {
 }
 
 a {
-  font-size: 35px;
+  font-size: 30px;
   margin: 20px;
   text-decoration: none;
   color: #95a5a6;
