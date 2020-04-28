@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html>
+<head>
+  <title>Sign Up</title>
 <body>
 <h1>Don't miss out on all the fun</h1>
 <br>
 <br>
-<h3>Sign up for a Chitter account!</h3>
+<h2>Sign up for a Chitter account!</h2>
+<img id="chitterlogo" src="../Images/Chitter.png">
 <br>
 <br>
 
-<form action="/users" method="post">
+<form align="center" action="/users" method="post">
    <input type="email" name="email" placeholder="Enter your email">
    <input type="password" name="password" placeholder="Enter your password">
    <input type="text" name="peep_handle" placeholder="Enter your Chitter Handle">
@@ -19,15 +22,16 @@
 
 
 </body>
- <style>
+<style>
 
-  body {
-   background-color: #ffccff;
+ <style>
+ body {
+   background-color: white;
    text-align: center;
  }
 
- .button {
-  background-color: #ff1aff;
+  .button {
+  background-color: #33ccff;
   border: none;
   color: white;
   padding: 5px 15px;
@@ -35,6 +39,21 @@
   text-decoration: none;
   display: inline-block;
   font-size: 10px;
+}
+
+h1 {
+  color:  #4dd2ff;
+  text-align: center;
+}
+
+h2 {
+  color: #00ace6;
+  text-align: center;
+}
+
+img {
+  margin: auto;
+  display: block;
 }
 
  </style>
