@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html>
+<head>
+  <title>Log In</title>
+  <link rel="stylesheet" type="text/css" href="css/signin.css">
+</head>
 <body>
+<br>
+<h1>Chitter - for all your Chatter</h1>
+<br>
+<img id="chitterlogo" src="../Images/Chitter.png">
+<h3>Log In</h3>
 <form action="/sessions" method="post">
    <input type="email" name="email" placeholder="Enter email">
    <input type="password" name="password" placeholder="Enter password">
@@ -10,16 +19,15 @@
  <h1>
    <%= flash[:notice] %>
  </h1>
- </body>
- <style>
 
-  body {
-   background-color: #ffccff;
+ <style>
+ body {
+   background-color: white;
    text-align: center;
  }
 
   .button {
-  background-color: #ff1aff;
+  background-color: #33ccff;
   border: none;
   color: white;
   padding: 5px 15px;
@@ -28,5 +36,12 @@
   display: inline-block;
   font-size: 10px;
 }
- </style>
- </html>
+
+h1 {
+  color:  #4dd2ff;
+  text-align: center;
+}
+
+h3 {
+  color: #00ace6;
+}
