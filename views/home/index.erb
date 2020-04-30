@@ -14,46 +14,20 @@
   </nav>
  <h1>Chitter - for all your Chatter</h1>
  </div>
- <h2>What's happening?</h2>
+ <h2>Whats happening?</h2>
  <img id="chitterlogo" src="Images/Chitter.png">
 <br>
 <br>
 <br>
 <br>
  
- <form action="/messages" method="post">
- <label for="email">
- 	Email:
-  <input type="text" name="name" placeholder="What is your name?">
-  </label>
-  <label for="message">
-  Peep:
-  <input type="text" name="message" placeholder="What's on your mind?">
-  </label>
-  <label for="peep_handle">
-  Handle:
-  <input type="text" name="peep_handle" placeholder="Enter a peep_handle">
-  </label>
-  <input class="button" type="submit" value="Post" >
-</form> 
+
 <br>
 <br>
 <br>
- 
- <h2>Here's what's going on in your circle</h2>
  <br>
  <br>
- <br>
-  <ol>
-   <% @messages.each do |message| %>
-     <li>
-       <h3><%= message.name %></h3>
-          <p id="peep"> <%= message.message %></p>
-         <p><%= message.peep_handle %></p>
-         <br id="time">Posted at: <%= message.timestamp %></br>
-     </li>
-   <% end %>
- </ol>
+  
 
 <section id="About">
 <h2>About Chitter</h2>
@@ -67,10 +41,9 @@
 <p>Chitter was created in <strong>January 2020</strong> by <strong>Millie Jacobson, Donna Graham and Imelda Danson.</strong> </p>
 <p>The service rapidly gained worldwide popularity. </p>
 <br>
-<br>
 <div class="container">
 <section id="Sign up">
- <form id="formsignup" action="/users/new" method="post">
+ <form id="formsignup" action="/users/new">
  <input class="button" type="submit" value="Click here to sign up for a Chitter account">
  </form>
  </section>
@@ -143,7 +116,7 @@ ol {
 }
 
 .container {
-  padding: 100px;
+  padding: 60px;
   max-width: 1000px;
   display: flex;
   flex-direction: row;
@@ -162,7 +135,7 @@ ol {
 
 #formsignin {
   flex: none;
-  width: 100px;
+  width: 30px;
   font-size: 30px;
 
 }

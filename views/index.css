@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:200');
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
+
+
+body {
+   background-color: #ffccff;
+   text-align: center;
+ }
+
+h3 {
+  color:  #a3c2c2;
+  text-align: center;
+}
+
+
+.header {
+  font-size: 30px;
+  color: #ff1aff;
+  text-align: center;
+  border: solid, black, 5px;
+}
+
+#peep {
+  text-align: center;
+  color:  #99ffff;
+}
+
+#time {
+  text-align: center;
+}
+
+ol {
+  text-align: center; 
+  display: inline-block;
+}
+
+.button {
+  background-color: #ff1aff;
+  border: none;
+  color: white;
+  padding: 5px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 10px;
+}
+
+
+ img {
+    width: 2px;
+    height: 4px;
+
+ }
+
+ 
+
+
+
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+a {
+  font-size: 35px;
+  margin: 20px;
+  text-decoration: none;
+  color: #95a5a6;
+  font-family: roboto;
+  border-bottom: 1px solid #52c9aa;
+  transition: color 0.75s ease-in-out;
+}
+
+a:hover {
+  color: #e974bc;
+  border-bottom-color: #4d0730;
+}
+
+i {
+  margin-right: 10px;
+}
+
+
+
+@media screen and (max-width: 600px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+    background: #cc8db4;
+  }
+  a {
+    color: white;
+  }
+}
+
+
+@media screen and (max-width: 920px) {
+    nav {
+      justify-content: center;
+    }
+    a {
+      font-size: 26px;
+    }
+  }

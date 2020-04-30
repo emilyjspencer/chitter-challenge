@@ -22,48 +22,46 @@ class Chitter < Sinatra::Base
   end
 
   get '/sessions/new' do
-    erb :"sessions/new"
+    erb(:"sessions/new")
   end
 
 
   get '/' do
-    @messages = Messages.all 
-    erb(:index)
+    erb(:"home/index")
   end
 
   post '/messages' do
-     Messages.create_message(name: params[:name], message: params[:message], peep_handle: params[:peep_handle])
-     redirect '/'
+     Messages.create_message(message: params[:message], user_id: session[:user_id])
+     redirect '/messages'
   end
 
   get '/messages' do
-    p "---------------------------" 
-    p session[:user_id]
     @user = Users.find_details(id: session[:user_id])
-    message = params['message']
+    redirect '/' if @user.nil?
     @messages = Messages.all
-    erb(:messages)
+    erb(:"messages/index")
   end
 
-  post '/users/new' do 
-    redirect '/users/new'
+  post '/users' do 
+    user = Users.create(email: params[:email], password: params[:password], peep_handle: params[:peep_handle])
+    session[:user_id] = user.id
+    redirect '/messages'
+  end
+
+  post '/users/new' do
+    "Hello World"
   end
 
   get '/users/new' do
-    erb(:'users/new') 
+    erb(:"users/new") 
   end
 
-  post '/users' do
-   "You have successfuly registered for a Chitter account!"
-  end
 
-  get '/users' do
-    user = Users.create(email: params[:email], password: params[:password], peep_handle: params[:peep_handle])
-    session[:user_id] = user.id
-    "You have successfuly registered for a Chitter account!"
-    erb(:users)
-    redirect '/users'
-  end
+  post '/sessions/destroy' do
+    session.clear
+    flash[:notice] = 'You have been signed out of Chitter'
+    redirect '/'
+  end 
 
   run if app_file == $0
 

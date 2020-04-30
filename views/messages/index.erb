@@ -1,0 +1,28 @@
+
+
+<center>
+<% if @user %>
+  <h1>Welcome to Chitter <%= @user.peep_handle %>
+  <form action="/sessions/destroy" method="post">
+    <input type="submit" value="Sign out" />
+  </form>
+<% end %>
+<h3>Whats on your mind?</h3>
+  <form action="/messages" method="post">
+    <input type="text" name="message" placeholder="Write your message here" />
+    <input type="submit" value="Submit" />
+  </form>
+<ul>
+  <% @messages.each do |message| %>
+    <% if message.user_id == @user.id %>
+      <h4><%= @user.peep_handle %>: </h4>
+    <% elsif (@author = User.find_details(id: message.user_id)) %>
+      <h4><%= @author.peep_handle %>: </h4>
+    <% end %>
+        <p><%= message.message %></p>
+        <br>Posted at: <%= message.timestamp %></br>
+        --------------------
+    <br></br>
+  <% end %>
+</ul>
+</center>
