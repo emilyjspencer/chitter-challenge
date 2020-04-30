@@ -1,16 +1,29 @@
-
-
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Messages</title>
+</head>
+<body>
+<div class="header">
+<nav>
+   <a class="nav-link" href="#About" rel="internal"><i class="fa fa-home"></i>About</a>
+   <a class="nav-link" href="#Log out" rel="internal"><i class="fa fa-sign-in"></i>Log Out</a>
+   <a class="nav-link" href="#Contact us" rel="internal"><i class="fa fa-phone"></i>Contact Us</a>
+ </nav>
+</div>
 <center>
 <% if @user %>
   <h1>Welcome to Chitter <%= @user.peep_handle %>
-  <form action="/sessions/destroy" method="post">
-    <input type="submit" value="Sign out">
-  </form>
 <% end %>
-<h3>Whats on your mind?</h3>
+</center>
+
+<img id="chitterlogo" src="Images/Chitter.png">
+<br>
+<br>
+<h3>Whats happening?</h3>
   <form action="/messages" method="post">
-    <input type="text" name="message" placeholder="Write your message here">
-    <input type="submit" value="Submit">
+    <input id="box" type="text" name="message" placeholder="Write your message here">
+    <input id="submit" type="submit" value="Submit">
   </form>
 <ul>
   <% @messages.each do |message| %>
@@ -26,3 +39,207 @@
   <% end %>
 </ul>
 </center>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<section id="About">
+<h2>About Chitter</h2>
+<p><strong>Chitter</strong> is a British microblogging and social networking service on which users post</p>
+<p>and interact with messages.</p>
+<p>Registered users can post messages, but unregistered users can only read them.</p>
+<p>Users access Chitter through its <strong>website interface</strong>, through Short Message Service (SMS) or </p>
+<p>its mobile-device application software ("app").</p>
+<p><strong>Chitter, Inc.</strong> is based in <Strong>Shoreditch</strong>, London and has more than 10 offices around the world.</p>
+<p>Peeps were originally restricted to 140 characters, but there is currently no limit</p>
+<p>Chitter was created in <strong>January 2020</strong> by <strong>Millie Jacobson, Donna Graham and Imelda Danson.</strong> </p>
+<p>The service rapidly gained worldwide popularity. </p>
+<br>
+
+ <br>
+ <br>
+<section id="Log out">
+ <form action="/sessions/new">
+ <input id="logout" type="submit" value="Log out">
+ </form>
+ </section>
+ </div>
+
+ <section id="Contact us">
+ <p>Phone number: 0208 9876 2354711</p>
+ <p>Email: customerservices.chitter@gmail.com</p>
+ </section>
+
+
+<style>
+ @import url('https://fonts.googleapis.com/css?family=Roboto:200');
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
+
+
+body {
+   background-color: white;
+   text-align: center;
+ }
+
+h2 {
+  color:  #00ace6;
+  text-align: center;
+}
+
+h1 {
+  color:  #4dd2ff;
+  text-align: center;
+}
+
+#logout {
+  background-color: #33ccff;
+  border: none;
+  color: white;
+  padding: 5px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 10px;
+
+}
+
+#submit {
+  background-color: #33ccff;
+  border: none;
+  color: white;
+  padding: 5px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 10px;
+}
+
+#submit2 {
+  background-color: #33ccff;
+  border: none;
+  color: white;
+  padding: 5px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 10px;
+}
+
+#box {
+  width: 400px;
+}
+
+.header {
+  font-size: 30px;
+  color: #80dfff;
+  text-align: center;
+  border: solid, black, 5px;
+}
+
+#peep {
+  text-align: center;
+  color:  #99ffff;
+}
+
+#time {
+  text-align: center;
+}
+
+ol {
+  text-align: center; 
+  display: inline-block;
+}
+
+
+.container {
+  padding: 60px;
+  max-width: 1000px;
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  height: 60px;
+  justify-content: space-around;
+  flex-wrap: nowrap;
+  align-items: stretch;
+}
+
+ img {
+    width: 150px;
+    height: 150px;
+
+ }
+
+
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+a {
+  font-size: 30px;
+  margin: 20px;
+  text-decoration: none;
+  color: #95a5a6;
+  font-family: roboto;
+  border-bottom: 1px solid #52c9aa;
+  transition: color 0.75s ease-in-out;
+}
+
+a:hover {
+  color: #e974bc;
+  border-bottom-color: #4d0730;
+}
+
+i {
+  margin-right: 10px;
+}
+
+
+
+@media screen and (max-width: 600px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+    background: #cc8db4;
+  }
+  a {
+    color: white;
+  }
+}
+
+
+@media screen and (max-width: 920px) {
+    nav {
+      justify-content: center;
+    }
+    a {
+      font-size: 26px;
+    }
+  }
+
+  p {
+    text-align: center;
+  }
+
+
+
+
+ 
+
+  </style>
+
+
+
+
+</body>
+</html>

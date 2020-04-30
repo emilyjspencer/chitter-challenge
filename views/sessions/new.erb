@@ -20,6 +20,10 @@
    <%= flash[:notice] %>
  </h1>
 
+ <form action="/" method="get">
+   <input id="home" type="submit" value="Back to home">
+  </form>
+
  <style>
  body {
    background-color: white;
@@ -27,6 +31,17 @@
  }
 
   .button {
+  background-color: #33ccff;
+  border: none;
+  color: white;
+  padding: 5px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 10px;
+}
+
+#home {
   background-color: #33ccff;
   border: none;
   color: white;
