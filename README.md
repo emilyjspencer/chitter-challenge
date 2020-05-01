@@ -107,7 +107,7 @@ rspec
 
 ### What it looks like:
 
-![homepage](index.png)
+![homepage](updated_home.png)
 ![homepage2](index2.png)
 ![signup](signup.png)
 ![login](login.png)
