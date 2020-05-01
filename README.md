@@ -112,6 +112,7 @@ rspec
 ![signup](signup.png)
 ![login](login.png)
 ![welcomeuser](welcome_user.png)
+![messages](messages.png)
 
 
 
