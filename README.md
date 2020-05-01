@@ -66,17 +66,25 @@ How to use:
 
 Clone this repository:
 
-**git clone https://github.com/emilyjspencer/chitter-challenge.git**
+```html
+git clone https://github.com/emilyjspencer/chitter-challenge.git
+```
 
 cd into the repo on your computer
 
-Rundle **bundle install**
+Run:
+```html
+bundle install
+```
 
 Start the server:
 
-**rackup**
+```html
+rackup
+```
 
-**Go to localhost:9292**
+Go to localhost:9292
+
 
 ### How to run the tests
 
@@ -103,6 +111,7 @@ rspec
 ![homepage2](index2.png)
 ![signup](signup.png)
 ![login](login.png)
+![welcomeuser](welcome_user.png)
 
 
 
