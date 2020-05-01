@@ -1,12 +1,14 @@
 # Chitter Challenge
 
+
+
 ### Chitter is a clone of the popular micro-blogging service Twitter.
 
 * This version has a responsive top navigation menu.
 
-* A user can sign up for a Chitter account, log in and log out.
+* A user can **sign up** for a Chitter account, **log in** and **log out.**
 
-* They can post messages and see them in reverse chronological order on their page, with the time that the message was created. alongside the message.
+* They can **post** messages and see them in **reverse chronological order** on their page, with the **time** that the message was created, alongside the message.
 
 * 100% test coverage
 
@@ -15,28 +17,28 @@
 
 The Chitter Challenge uses **PostgreSQL**, so if you don't have it installed on your computer, please do the following:
 
-Install postgres:
+**Install postgres:**
 
 ```html
 brew install postgresql
 ```
 
-Start postgres:
+**Start postgres:**
 
 ```
 brew services start postgresql
+psql postgres
 ```
 
-**psql postgres**
 
-Create database:
+**Create database:**
 
 ```html
 CREATE DATABASE chitter;
 ```
 
 
-Create a test database:
+**Create a test database:**
 
 ```html
 CREATE DATABASE chitter_test;
@@ -49,8 +51,8 @@ CREATE DATABASE chitter_test;
 \c chitter
 ```
 
-Create the following tables and alterations, by typing the following SQL commands:
-(the commands should be executed in order)
+**Create the following tables and alterations, by typing the following SQL commands:
+(the commands should be executed in order)**
 
 ```html
 CREATE TABLE messages(id SERIAL PRIMARY KEY, name VARCHAR(40), peep_handle VARCHAR(20), message VARCHAR(400));
@@ -83,31 +85,31 @@ Check that the tables have been created by typing the following:
 \dt
 ```
 
-Repeat for the test database - chitter_test
+**Repeat for the test database - chitter_test**
 
 
-How to use:
+### How to use:
 
-Clone this repository:
+**Clone this repository:**
 
 ```html
 git clone https://github.com/emilyjspencer/chitter-challenge.git
 ```
 
-cd into the repo on your computer
+**cd into the repo on your computer**
 
 Run:
 ```html
 bundle install
 ```
 
-Start the server:
+**Start the server:**
 
 ```html
 rackup
 ```
 
-Go to localhost:9292
+**Go to localhost:9292**
 
 
 ### How to run the tests
