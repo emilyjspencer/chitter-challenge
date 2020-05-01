@@ -1,8 +1,8 @@
 require_relative 'database_connection' 
 
-class Messages# updates messages - we need to deal with specific instances - i.e. a single message(peep)
+class Messages
 
-  attr_reader :id, :message, :user_id, :timestamp # an instance of a message has an id and a message
+  attr_reader :id, :message, :user_id, :timestamp 
 
   def initialize(id:, message:, user_id: ,timestamp:) 
     @id = id

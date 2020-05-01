@@ -29,7 +29,7 @@
   <% @messages.each do |message| %>
     <% if message.user_id == @user.id %>
       <h4><%= @user.peep_handle %>: </h4>
-    <% elsif (@peeper = User.find_details(id: message.user_id)) %>
+    <% elsif (@peeper = Users.find_details(id: message.user_id)) %>
       <h4><%= @peeper.peep_handle %>: </h4>
     <% end %>
         <p><%= message.message %></p>
