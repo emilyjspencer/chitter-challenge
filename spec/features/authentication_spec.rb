@@ -16,7 +16,7 @@ feature 'User authentication' do
      fill_in('email', with: 'emilu@gmail.com')
      fill_in('password', with: 'coding')
      click_button('Sign in')
-     expect(page).not_to have_content 'Chitter - for all your Chatter'
+     expect(page).not_to have_content 'Welcome to Chitter lajoiedevivre89'
      expect(page).to have_content 'Email or password incorrect. Unable to sign in'
    end 
  end
