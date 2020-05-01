@@ -6,26 +6,25 @@ describe Messages do
   describe '.all' do
     it 'retrieves all of the messages' do
       connection = PG.connect(dbname: 'chitter_test') 
-      message = Messages.create_message(name: 'Emily', message: 'We are learning how to build a full-stack application', peep_handle: 'lajoiedevivre89', timestamp: '05:30:07')
-      Messages.create_message(name: 'Billy', message: 'From Monday we will no longer be the newest cohort', peep_handle: 'housemusic1', timestamp: '05:30:07')
-      Messages.create_message(name: 'Jonas', message: 'Tweets sound better than peeps', peep_handle: 'popmusicrocks', timestamp: '05:30:07')
+      user = Users.create(email: 'emily@gmail.com', password: '12345', peep_handle: 'lajoiedevivre89')
+      message = Messages.create_message(message: 'We are learning how to build a full-stack application', user_id: user.id)
+      Messages.create_message( message: 'From Monday we will no longer be the newest cohort', user_id: user.id)
+      Messages.create_message( message: 'Tweets sound better than peeps', user_id: user.id)
       messages = Messages.all 
       expect(messages.length).to eq 3
       expect(message).to be_a Messages
       expect(message.message).to eq 'We are learning how to build a full-stack application'
-      expect(message.name).to eq ' Emily'
-      expect(message.peep_handle).to eq 'lajoiedevivre89' 
-      expect(message.timestamp).to eq '05:30:07'
     end
   end
 
   describe '.create_message' do
    it 'creates a new message' do
-     message = Messages.create_message(name: 'Emily', message: 'Hello', peep_handle: 'lajoiedevivre89', timestamp: '05:30:07')
+     user = Users.create(email: 'emily@gmail.com', password: '12345', peep_handle: 'lajoiedevivre89')
+     message = Messages.create_message(message: 'Hello', user_id: user.id)
      persisted_data = persisted_data(table: 'messages', id: message.id)
-     expect(message).to be_a Messages # expect it to be an instance of the Messages class
-     expect(message.id).to eq persisted_data.first['id'] # id()  is an attribute reader
-     expect(message.message).to eq 'Hello' # message() is an attribute reader
+     expect(message).to be_a Messages 
+     expect(message.id).to eq persisted_data.first['id'] 
+     expect(message.message).to eq 'Hello' 
    end
   end       
 end
