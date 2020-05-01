@@ -33,13 +33,14 @@ CREATE DATABASE chitter_test;
 ```
 
 
-###Connect to the chitter database by typing:
+### Connect to the chitter database by typing:
 
 ```html
 \c chitter
 ```
 
-Create the following tables, by typing the following SQL commands:
+Create the following tables and alterations, by typing the following SQL commands:
+(the commands should be executed in order)
 
 ```html
 CREATE TABLE messages(id SERIAL PRIMARY KEY, name VARCHAR(40), peep_handle VARCHAR(20), message VARCHAR(400));
@@ -52,6 +53,19 @@ ALTER TABLE messages ADD COLUMN posted_at TIMESTAMP DEFAULT NOW();
 ```html
 CREATE TABLE users(id SERIAL PRIMARY KEY, email VARCHAR(40), password VARCHAR(100), peep_handle VARCHAR(40));
 ```
+
+```html
+ALTER TABLE messages ADD COLUMN user_id INTEGER REFERENCES users (id);
+```
+
+```html
+ALTER TABLE messages DROP COLUMN name;
+```
+
+```html
+ALTER TABLE messages DROP COLUMN peep_handle;
+``` 
+
 
 Check that the tables have been created by typing the following: 
 
