@@ -1,4 +1,14 @@
-Chitter Challenge
+# Chitter Challenge
+
+### Chitter is a clone of the popular micro-blogging service Twitter.
+
+* This version has a responsive top navigation menu.
+
+* A user can sign up for a Chitter account, log in and log out.
+
+* They can post messages and see them in reverse chronological order on their page, with the time that the message was created. alongside the message.
+
+* 100% test coverage
 
 
 ### Database creation
